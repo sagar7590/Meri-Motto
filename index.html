@@ -18,6 +18,16 @@
             position: relative; /* Needed for absolute positioning of emojis */
         }
         
+        .container {
+            display: flex;  /* Changed from grid to flex */
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; /* Ensures form stacks properly */
+            height: 100vh; /* Ensures full viewport height */
+            width: 100%;
+            text-align: center;
+        }
+        
         #login-form {
             background: rgba(255, 255, 255, 0.2);
             padding: 30px 40px;
@@ -95,12 +105,14 @@
     </style>
 </head>
 <body>
-    <form id="login-form">
-        <label for="code">Enter Your Name:</label>
-        <input type="text" id="code" name="code" placeholder="Your Name">
-        <button id="submit-btn">Login</button>
-    </form>
-    <div id="result"></div>
+    <div class="container">
+        <form id="login-form">
+            <label for="code">Enter Your Name:</label>
+            <input type="text" id="code" name="code" placeholder="Your Name">
+            <button id="submit-btn">Login</button>
+        </form>
+        <div id="result"></div>
+    </div>
     <script>
         const form = document.getElementById('login-form');
         const codeInput = document.getElementById('code');
